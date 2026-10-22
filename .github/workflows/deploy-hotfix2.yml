@@ -1,0 +1,19 @@
+name: Deploy hotfix
+
+# Publishes the hotfix site, https://astrarocket.github.io/simulator-hotfix/, from
+# the hotfix branch of AstraRocket/simulator. The build lives there, in
+# .github/workflows/channel-deploy.yml; this file is the "Run workflow" button.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    uses: AstraRocket/simulator/.github/workflows/channel-deploy.yml@hotfix
+    with:
+      channel: hotfix
